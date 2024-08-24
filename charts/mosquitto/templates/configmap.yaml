@@ -13,7 +13,7 @@ data:
     {{- end }}
     persistence_location /mosquitto/data/
     log_dest stdout
-    password_file /mosquitto/config/accounts.conf
+    password_file /mosquitto/secret/users.conf
     acl_file /mosquitto/config/acls.conf
     listener {{ .Values.service.ports.mqtt }}
 
@@ -24,7 +24,5 @@ data:
     keyfile /mosquitto/ssl/tls.key
     {{- end }}
 {{ .Values.mosquitto.config | indent 4 }}
-  accounts.conf: |-
-{{ .Values.mosquitto.users | indent 4 }}
   acls.conf: |-
 {{ .Values.mosquitto.acls | indent 4 }}

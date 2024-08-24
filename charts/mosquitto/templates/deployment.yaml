@@ -44,6 +44,9 @@ spec:
           volumeMounts:
           - name: config-volume
             mountPath: /mosquitto/config
+          - name: secret-volume
+            mountPath: /mosquitto/secret/users.conf
+            subPath: "{{ .Values.mosquitto.usersSecretSubPath }}"
           - name: mosquitto-data
             mountPath: {{ .Values.mosquitto.persistence.path }}
             subPath: {{ .Values.mosquitto.persistence.subPath }}
@@ -55,6 +58,13 @@ spec:
         - name: config-volume
           configMap:
             name: {{ template "mosquitto.fullname" . }}
+        - name: secret-volume
+          secret:
+        {{- if .Values.mosquitto.existingSecretUsers -}}
+            secretName: "{{ .Values.mosquitto.existingSecretUsers }}""
+        {{- else -}}
+            secretName: {{ template "mosquitto.fullname" . }}-users
+        {{- end -}}
         {{- if .Values.mosquitto.ssl.enabled }}
         - name: ssl-volume
           secret:

@@ -52,6 +52,8 @@ mosquitto:
   config: ""
   users: ""
   acls: ""
+  existingSecretUsers: ""
+  existingSecretUsersKey: "users"
 
   ssl:
     enabled: false
@@ -65,10 +67,10 @@ mosquitto:
         group: cert-manager.io
         kind: ClusterIssuer
         name: letsencrypt
-  
+
   persistence:
     enabled: false
-  
+
     ## The path the volume will be mounted at, useful when using different
     ## Mosquitto images.
     path: /mosquitto/data/
