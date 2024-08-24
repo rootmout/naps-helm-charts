@@ -52,6 +52,7 @@ mosquitto:
   config: ""
   users: ""
   acls: ""
+  # use existing secret for users
   existingSecretUsers: ""
   existingSecretUsersKey: "users"
 
