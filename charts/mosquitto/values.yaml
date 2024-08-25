@@ -49,12 +49,13 @@ tolerations: []
 affinity: {}
 
 mosquitto:
-  config: ""
-  users: ""
-  acls: ""
+  # config: ""
+  # users: ""
+  # acls: ""
+
   # use existing secret for users
   existingSecretUsers: ""
-  existingSecretUsersKey: "users"
+  usersSecretSubPath: "users"
 
   ssl:
     enabled: false

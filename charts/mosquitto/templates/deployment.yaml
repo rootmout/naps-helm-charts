@@ -60,9 +60,9 @@ spec:
             name: {{ template "mosquitto.fullname" . }}
         - name: secret-volume
           secret:
-        {{- if .Values.mosquitto.existingSecretUsers -}}
-            secretName: "{{ .Values.mosquitto.existingSecretUsers }}""
-        {{- else -}}
+        {{- if .Values.mosquitto.existingSecretUsers }}
+            secretName: {{ .Values.mosquitto.existingSecretUsers }}
+        {{- else }}
             secretName: {{ template "mosquitto.fullname" . }}-users
         {{- end -}}
         {{- if .Values.mosquitto.ssl.enabled }}
