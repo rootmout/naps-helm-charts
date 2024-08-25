@@ -54,7 +54,7 @@ mosquitto:
   acls: ""
   # use existing secret for users
   existingSecretUsers: ""
-  existingSecretUsersKey: "users"
+  usersSecretSubPath: "users"
 
   ssl:
     enabled: false
