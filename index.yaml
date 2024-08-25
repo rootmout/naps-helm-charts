@@ -3,6 +3,18 @@ entries:
   mosquitto:
   - apiVersion: v2
     appVersion: 1.6.12
+    created: "2024-08-25T00:19:12.10355616Z"
+    description: A Helm chart packaging Mosquitto
+    digest: 17992c8a7ba73a7428fe57f40653a73afdf6b1522a2ff0ddfb85620ab71a185b
+    home: https://github.com/NaPs/helm-charts/tree/master/charts/mosquitto
+    icon: https://mosquitto.org/images/mosquitto-text-side-28.png
+    name: mosquitto
+    type: application
+    urls:
+    - https://github.com/rootmout/naps-helm-charts/releases/download/mosquitto-1.0.6/mosquitto-1.0.6.tgz
+    version: 1.0.6
+  - apiVersion: v2
+    appVersion: 1.6.12
     created: "2024-08-24T23:53:44.95604622Z"
     description: A Helm chart packaging Mosquitto
     digest: 66857b9887a76899dae513f2783c79313217f50372108f2f4cd00605833c9fd3
@@ -25,4 +37,4 @@ entries:
     urls:
     - https://github.com/rootmout/naps-helm-charts/releases/download/mosquitto-1.0.4/mosquitto-1.0.4.tgz
     version: 1.0.4
-generated: "2024-08-24T23:53:44.956061819Z"
+generated: "2024-08-25T00:19:12.103592709Z"
